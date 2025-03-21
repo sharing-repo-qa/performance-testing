@@ -1,0 +1,75 @@
+[
+    {
+      "httpRequest": {
+        "method": "GET",
+        "path": "/api/resource"
+      },
+      "httpResponse": {
+        "statusCode": 200,
+        "body": "{\"message\": \"Hello from MockServer!\"}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "httpRequest": {
+        "method": "POST",
+        "path": "/api/resource",
+        "body": {
+          "type": "STRING",
+          "string": "{\"action\": \"create\"}"
+        }
+      },
+      "httpResponse": {
+        "statusCode": 201,
+        "body": "{\"message\": \"Resource created successfully!\"}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "httpRequest": {
+        "method": "GET",
+        "path": "/api/resource/error"
+      },
+      "httpResponse": {
+        "statusCode": 500,
+        "body": "{\"error\": \"Internal server error occurred.\"}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "httpRequest": {
+        "method": "PUT",
+        "path": "/api/resource",
+        "body": {
+          "type": "STRING",
+          "string": "{\"action\": \"update\"}"
+        }
+      },
+      "httpResponse": {
+        "statusCode": 200,
+        "body": "{\"message\": \"Resource updated successfully!\"}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "httpRequest": {
+        "method": "DELETE",
+        "path": "/api/resource"
+      },
+      "httpResponse": {
+        "statusCode": 204,
+        "body": "",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }
+   ]

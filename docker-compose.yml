@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+ mockserver:
+   image: mockserver/mockserver:latest
+   container_name: mockserver
+   ports:
+     - "1080:1080"
+   environment:
+     MOCKSERVER_INITIALIZATION_JSON_PATH: /config/mockserver_initializer.json
+   volumes:
+     - ./mockserver_initializer.json:/config/mockserver_initializer.json
+ jmeter:
+  image: justb4/jmeter:latest
+  container_name: jmeter
+  volumes:
+    - ./example.jmx:/test/example.jmx
+    - ./results:/test/results
+  command: >
+    jmeter -n -t /test/example.jmx -l /test/results/results.jtl
